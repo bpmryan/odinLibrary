@@ -12,7 +12,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-Book.prototype.listBook = function () {
+Book.prototype.toggleRead = function () {
   this.read = !this.read;
 };
 
@@ -24,3 +24,7 @@ function addBookToLibrary() {
   myLibrary.push(book);
   displayBooks();
 }
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+})

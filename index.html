@@ -1,23 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="code/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="code/css/style.css" />
     <title>Odin Library</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="title">
-        <h1>Welcome to the Odin Library</h1>
-        <button id="createBook">New Book</button>
+      <h1>Welcome to the Odin Library</h1>
+      <button id="createBook">New Book</button>
     </div>
 
-    <div id="shelf"></div>
-    <div id="shelf"></div>
-    <div id="shelf"></div>
-    <div id="shelf"></div>
+    <dialog>
+      <form action="">
+        <h3>New Book</h3>
+        <p>Add a new book</p>
 
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" />
+
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" />
+
+        <label for="pages">Number of pages</label>
+        <input type="text" id="pages" name="pages" />
+
+        <button type="submit" value="Submit">Save</button>
+      </form>
+    </dialog>
+
+    <div id="shelf"></div>
+    <div id="shelf"></div>
+    <div id="shelf"></div>
+    <div id="shelf"></div>
 
     <script src="code/js/script.js"></script>
-</body>
+  </body>
 </html>
