@@ -34,3 +34,7 @@
   box-shadow: 0 0 0 5px black;
   margin: 10px;
 }
+
+form {
+  color: white;
+}
