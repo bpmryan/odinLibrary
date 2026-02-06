@@ -38,3 +38,17 @@
 form {
   color: white;
 }
+
+form button {
+  border: 1.5px solid black;
+  border-radius: 9999px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(92, 64, 51);
+  padding: 10px;
+}
+
+form input {
+  border-radius: 10px;
+  background-color: white;
+}

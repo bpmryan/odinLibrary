@@ -1,4 +1,5 @@
-const myLibrary = [];
+// changed to let so that user can delete book
+let myLibrary = [];
 
 // constructors
 function Book(title, author, pages, read) {
@@ -21,13 +22,33 @@ Book.prototype.toggleRead = function () {
  * create a book then store it in the array
  * id createBook
  */
-function addBookToLibrary() {
+function addBookToLibrary(title, author, pages, read) {
   const book = new Book(title, author, pages, read);
   myLibrary.push(book);
   displayBooks();
 }
 
 const shelf = document.getElementById("shelf");
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const userTitle = document.getElementById("title");
+  const userAuthor = document.getElementById("author");
+  const userPages = document.getElementById("pages");
+  const userRead = document.getElementById("read");
+
+  addBookToLibrary(
+    userTitle.value,
+    userAuthor.value,
+    userPages.value,
+    userRead.checked
+  )
+
+  form.reset();
+})
 
 /**
  * Pipes in HTML for each book put into array
@@ -49,10 +70,24 @@ function displayBooks() {
     const p = document.createElement("p");
     p.textContent = `${book.pages} pages`;
 
-    
-  })
-}
+    const toggleButton = document.createElement("button");;
+    toggleButton.textContent = "Toggle Read";
+    toggleButton.addEventListener("click", () => {
+      book.toggleRead();
+      displayBooks();
+    })
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-})
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", () => {
+      myLibrary = myLibrary.filter((b) => b.id !== book.id);
+      displayBooks();
+    });
+
+    div.appendChild(h2);
+    div.appendChild(h3);
+    div.appendChild(p);
+    div.appendChild(deleteButton);
+    shelf.appendChild(div);
+  });
+}
